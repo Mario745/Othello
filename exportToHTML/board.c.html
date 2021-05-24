@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>board.c</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #bbb529;}
+.s3 { color: #6a8759;}
+.s4 { color: #cc7832;}
+.s5 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+board.c</font>
+</center></td></tr></table>
+<pre><span class="s0">//</span>
+<span class="s0">// Created by mario on 23/04/2021.</span>
+<span class="s0">//</span>
+<span class="s2">#include </span><span class="s3">&lt;stdio.h&gt;</span>
+<span class="s2">#include </span><span class="s3">&quot;board.h&quot;</span>
+
+<span class="s4">void </span><span class="s1">initialise_board(</span><span class="s4">char </span><span class="s1">board[</span><span class="s5">8</span><span class="s1">][</span><span class="s5">8</span><span class="s1">]</span><span class="s4">,char </span><span class="s1">player1name[</span><span class="s5">5</span><span class="s1">]</span><span class="s4">,char </span><span class="s1">player2name[</span><span class="s5">5</span><span class="s1">]){</span>
+    <span class="s1">printf(</span><span class="s3">&quot;Score: %s (Black) 2:2 %s (White)</span><span class="s4">\n</span><span class="s3">&quot;</span><span class="s4">,</span><span class="s1">player1name</span><span class="s4">,</span><span class="s1">player2name)</span><span class="s4">;</span>
+    <span class="s4">int </span><span class="s1">i</span><span class="s4">;</span>
+    <span class="s0">//initialise all spots to ' '</span>
+    <span class="s4">for</span><span class="s1">(i=</span><span class="s5">0</span><span class="s4">;</span><span class="s1">i&lt;</span><span class="s5">8</span><span class="s4">;</span><span class="s1">i++){</span>
+        <span class="s4">for</span><span class="s1">(</span><span class="s4">int </span><span class="s1">j=</span><span class="s5">0</span><span class="s4">;</span><span class="s1">j&lt;</span><span class="s5">8</span><span class="s4">;</span><span class="s1">j++)</span>
+            <span class="s1">board[i][j]=</span><span class="s3">' '</span><span class="s4">;</span>
+    <span class="s1">}</span>
+    <span class="s1">board[</span><span class="s5">3</span><span class="s1">][</span><span class="s5">3</span><span class="s1">]=</span><span class="s3">'W'</span><span class="s4">; </span><span class="s1">board[</span><span class="s5">3</span><span class="s1">][</span><span class="s5">4</span><span class="s1">]=</span><span class="s3">'B'</span><span class="s4">;</span>
+    <span class="s1">board[</span><span class="s5">4</span><span class="s1">][</span><span class="s5">3</span><span class="s1">]=</span><span class="s3">'B'</span><span class="s4">; </span><span class="s1">board[</span><span class="s5">4</span><span class="s1">][</span><span class="s5">4</span><span class="s1">]=</span><span class="s3">'W'</span><span class="s4">;</span>
+    <span class="s4">for</span><span class="s1">(i=</span><span class="s5">0</span><span class="s4">;</span><span class="s1">i&lt;</span><span class="s5">8</span><span class="s4">;</span><span class="s1">i++){</span>
+        <span class="s1">printf(</span><span class="s3">&quot;  --- --- --- --- --- --- --- ---</span><span class="s4">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+        <span class="s1">printf(</span><span class="s3">&quot;%d&quot;</span><span class="s4">,</span><span class="s1">i+</span><span class="s5">1</span><span class="s1">)</span><span class="s4">;</span>
+        <span class="s1">printf(</span><span class="s3">&quot;| %c | %c | %c | %c | %c | %c | %c | %c |</span><span class="s4">\n</span><span class="s3">&quot;</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">0</span><span class="s1">]</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">1</span><span class="s1">]</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">2</span><span class="s1">]</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">3</span><span class="s1">]</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">4</span><span class="s1">]</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">5</span><span class="s1">]</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">6</span><span class="s1">]</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">7</span><span class="s1">])</span><span class="s4">;</span>
+    <span class="s1">}</span>
+    <span class="s1">printf(</span><span class="s3">&quot;  --- --- --- --- --- --- --- ---</span><span class="s4">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+    <span class="s1">printf(</span><span class="s3">&quot;   A   B   C   D   E   F   G   H </span><span class="s4">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+<span class="s1">}</span>
+
+<span class="s4">void </span><span class="s1">display_board(</span><span class="s4">char </span><span class="s1">board[</span><span class="s5">8</span><span class="s1">][</span><span class="s5">8</span><span class="s1">]</span><span class="s4">,char </span><span class="s1">player1name[</span><span class="s5">10</span><span class="s1">]</span><span class="s4">, char </span><span class="s1">player2name[</span><span class="s5">10</span><span class="s1">]</span><span class="s4">,int </span><span class="s1">player1score</span><span class="s4">,int </span><span class="s1">player2score){</span>
+    <span class="s1">printf(</span><span class="s3">&quot;Score: %s (Black) %d:%d %s (White)</span><span class="s4">\n</span><span class="s3">&quot;</span><span class="s4">,</span><span class="s1">player1name</span><span class="s4">,</span><span class="s1">player1score</span><span class="s4">,</span><span class="s1">player2score</span><span class="s4">,</span><span class="s1">player2name)</span><span class="s4">;</span>
+
+    <span class="s4">int </span><span class="s1">i</span><span class="s4">;</span>
+    <span class="s4">for</span><span class="s1">(i=</span><span class="s5">0</span><span class="s4">;</span><span class="s1">i&lt;</span><span class="s5">8</span><span class="s4">;</span><span class="s1">i++){</span>
+        <span class="s1">printf(</span><span class="s3">&quot;  --- --- --- --- --- --- --- ---</span><span class="s4">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+        <span class="s1">printf(</span><span class="s3">&quot;%d&quot;</span><span class="s4">,</span><span class="s1">i+</span><span class="s5">1</span><span class="s1">)</span><span class="s4">;</span>
+        <span class="s1">printf(</span><span class="s3">&quot;| %c | %c | %c | %c | %c | %c | %c | %c |</span><span class="s4">\n</span><span class="s3">&quot;</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">0</span><span class="s1">]</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">1</span><span class="s1">]</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">2</span><span class="s1">]</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">3</span><span class="s1">]</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">4</span><span class="s1">]</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">5</span><span class="s1">]</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">6</span><span class="s1">]</span><span class="s4">,</span><span class="s1">board[i][</span><span class="s5">7</span><span class="s1">])</span><span class="s4">;</span>
+    <span class="s1">}</span>
+    <span class="s1">printf(</span><span class="s3">&quot;  --- --- --- --- --- --- --- ---</span><span class="s4">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+    <span class="s1">printf(</span><span class="s3">&quot;   A   B   C   D   E   F   G   H </span><span class="s4">\n</span><span class="s3">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+<span class="s1">}</span></pre>
+</body>
+</html>

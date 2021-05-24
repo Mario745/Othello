@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/mario/CLionProjects/untitled2/board.h
+
+/cygdrive/c/Users/mario/CLionProjects/untitled2/main.c
+stdio.h
+-
+ctype.h
+-
+board.h
+/cygdrive/c/Users/mario/CLionProjects/untitled2/board.h
+
